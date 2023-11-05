@@ -1,0 +1,115 @@
+﻿@model JobTracking.Models.Staff.StaffInfo
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        
+        <div class="card mb-4">
+            <h5 class="card-header">Profile Details</h5>
+            <!-- Account -->
+            
+            <hr class="my-0">
+            <div class="card-body">
+                <form id="formAccountSettings" method="POST" onsubmit="return false">
+                    <div class="row">
+                        <div class="mb-3 col-md-6">
+                            <label for="firstName" class="form-label">Full Name</label>
+                            <input class="form-control" type="text" id="exampleFormControlReadOnlyInput1" placeholder= "@Html.DisplayFor(model => model.NameSurname)" readonly="">
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="lastName" class="form-label">Department</label>
+                            <input class="form-control" type="text" id="exampleFormControlReadOnlyInput1" placeholder="@Html.DisplayFor(model => model.Department)" readonly="">
+                            
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="lastName" class="form-label">Task</label>
+                            <input class="form-control" type="text" id="exampleFormControlReadOnlyInput1" placeholder="@Html.DisplayFor(model => model.Task)" readonly="">
+                            
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="lastName" class="form-label">E-Mail</label>
+                            <input class="form-control" type="text" id="exampleFormControlReadOnlyInput1" placeholder="@Html.DisplayFor(model => model.Email)" readonly="">
+                            
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="lastName" class="form-label">Phone Number</label>
+                            <input class="form-control" type="text" id="exampleFormControlReadOnlyInput1" placeholder="@Html.DisplayFor(model => model.PhoneNumber)" readonly="">
+                            
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="lastName" class="form-label">Authorization</label>
+                            <input class="form-control" type="text" id="exampleFormControlReadOnlyInput1" placeholder="@Html.DisplayFor(model => model.Authorization)" readonly="">
+                            
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="lastName" class="form-label">Identity Number</label>
+                            <input class="form-control" type="text" id="exampleFormControlReadOnlyInput1" placeholder="@Html.DisplayFor(model => model.IdNumber)" readonly="">
+                            
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="lastName" class="form-label">Birtdate</label>
+                            <input class="form-control" type="text" id="exampleFormControlReadOnlyInput1" placeholder="@Html.DisplayFor(model => model.Birthdate)" readonly="">
+                            
+                        </div>
+
+                        <div class="mb-3 col-md-6">
+                            <label for="lastName" class="form-label">Address</label>
+                            <input class="form-control" type="text" id="exampleFormControlReadOnlyInput1" placeholder="@Html.DisplayFor(model => model.Address)" readonly="">
+                            
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="lastName" class="form-label">Employment Date</label>
+                            <input class="form-control" type="text" id="exampleFormControlReadOnlyInput1" placeholder="@Html.DisplayFor(model => model.EmploymentDate)" readonly="">
+                           
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="lastName" class="form-label">Marital Status</label>
+                            <input class="form-control" type="text" id="exampleFormControlReadOnlyInput1" placeholder="@Html.DisplayFor(model => model.MaritalStatus)" readonly="">
+                            
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="lastName" class="form-label">Position Detail</label>
+                            <input class="form-control" type="text" id="exampleFormControlReadOnlyInput1" placeholder="@Html.DisplayFor(model => model.PositionDetail)" readonly="">
+                            
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="lastName" class="form-label">Relative's Information</label>
+                            <input class="form-control" type="text" id="exampleFormControlReadOnlyInput1" placeholder="@Html.DisplayFor(model => model.RelativesInformation)" readonly="">
+                            
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="lastName" class="form-label">Relative's Full Name</label>
+                            <input class="form-control" type="text" id="exampleFormControlReadOnlyInput1" placeholder="@Html.DisplayFor(model => model.RelativesFullName)" readonly="">
+                           
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="lastName" class="form-label">Relative's Identity Number</label>
+                            <input class="form-control" type="text" id="exampleFormControlReadOnlyInput1" placeholder="@Html.DisplayFor(model => model.RelativesIdNumber)" readonly="">
+                            
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="lastName" class="form-label">Relative's Phone Number</label>
+                            <input class="form-control" type="text" id="exampleFormControlReadOnlyInput1" placeholder="@Html.DisplayFor(model => model.RelativesPhoneNumber)" readonly="">
+                            
+                        </div>
+
+                        
+                    </div>
+                    <div class="mt-2">
+                        <a href="/StaffInfos/Index/" type="submit" class="btn btn-primary me-2">Main Page</a>
+                        
+                    </div>
+                </form>
+            </div>
+            <!-- /Account -->
+        </div>
+       
+    </div>
+</div>
+
+
+

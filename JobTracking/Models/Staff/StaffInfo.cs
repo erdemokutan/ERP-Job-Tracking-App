@@ -49,7 +49,7 @@ namespace JobTracking.Models.Staff
 
        
         [DisplayName("Details")]
-        [StringLength(75, ErrorMessage = "maximum length cannot be more than 75 characters")]
+        [StringLength(500, ErrorMessage = "maximum length cannot be more than 500 characters")]
         public string PositionDetail { get; set; }
 
         
@@ -72,7 +72,11 @@ namespace JobTracking.Models.Staff
         [StringLength(256, ErrorMessage = "maximum length cannot be more than 256 characters")]
         public string RelativesInformation { get; set; }
 
-        
+        [DisplayName("Relative's Full Name")]
+        [StringLength(75, ErrorMessage = "maximum length cannot be more than 75 characters")]
+        public string RelativesFullName { get; set; }
+
+
         [DisplayName("Relative's Identity Number")]
         [StringLength(25, ErrorMessage = "maximum length cannot be more than 25 characters")]
         public string RelativesIdNumber { get; set; }
