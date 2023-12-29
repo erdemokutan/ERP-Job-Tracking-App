@@ -30,11 +30,23 @@
                         <span id="basic-icon-default-fullname2" class="input-group-text"><i class="bx bx-user"></i></span>
                         <input class="form-control" type="text" name="NameSurname" id="NameSurname" value=" ">
                     </div>
-                    
+
                 </div>
+
+                <div class="mb-3 col-md-6">
+
+                    @Html.LabelFor(model => model.StaffPhoto, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="input-group input-group-merge">
+                        <span id="basic-icon-default-fullname2" class="input-group-text"><i class="bx bx-user"></i></span>
+                        <input class="form-control" type="text" name="StaffPhoto" id="StaffPhoto" value=" ">
+                    </div>
+
+                </div>
+
+
                 <div class="mb-3 col-md-6">
                     @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
-                    
+
                     <div class="input-group input-group-merge">
                         <span class="input-group-text"><i class="bx bx-envelope"></i></span>
                         <input class="form-control" type="email" name="Email" id="Email" value="Type Your Email Address Here">
@@ -44,7 +56,7 @@
                 </div>
                 <div class="mb-3 col-md-6">
                     @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
-                    
+
                     <div class="input-group input-group-merge">
                         <span class="input-group-text"><i class="bx bx-dialpad"></i></span>
                         <input class="form-control" type="text" id="Password" name="Password" value="" placeholder="">
@@ -52,7 +64,7 @@
                 </div>
                 <div class="mb-3 col-md-6">
                     @Html.LabelFor(model => model.Authorization, htmlAttributes: new { @class = "control-label col-md-2" })
-                   
+
                     <div class="input-group input-group-merge">
                         <span class="input-group-text"><i class="bx bx-shield-quarter"></i></span>
                         <input type="text" class="form-control" id="Authorization" name="Authorization" value="">
@@ -60,7 +72,7 @@
                 </div>
                 <div class="mb-3 col-md-6">
                     @Html.LabelFor(model => model.IdNumber, htmlAttributes: new { @class = "control-label col-md-4" })
-                   
+
                     <div class="input-group input-group-merge">
                         <span class="input-group-text"><i class="bx bx-id-card"></i></span>
                         <input type="text" id="IdNumber" name="IdNumber" class="form-control" value="Type Your Identity Number Here" placeholder="">
@@ -68,20 +80,20 @@
                 </div>
                 <div class="mb-3 col-md-6">
                     @Html.LabelFor(model => model.Department, htmlAttributes: new { @class = "control-label col-md-2" })
-                    
-                            <div class="input-group input-group-merge">
-                                <span id="basic-icon-default-company2" class="input-group-text"><i class="bx bx-buildings"></i></span>
-                                <input type="text" class="form-control" id="Department" name="Department" value="Type Your Department Here" placeholder="Address">
-                            </div>
-                        
-                    
+
+                    <div class="input-group input-group-merge">
+                        <span id="basic-icon-default-company2" class="input-group-text"><i class="bx bx-buildings"></i></span>
+                        <input type="text" class="form-control" id="Department" name="Department" value="Type Your Department Here" placeholder="Address">
+                    </div>
+
+
                 </div>
                 <div class=" form-group">
 
                 </div>
                 <div class="mb-3 col-md-6">
                     @Html.LabelFor(model => model.Task, htmlAttributes: new { @class = "control-label col-md-2" })
-                   
+
                     <div class="input-group input-group-merge">
                         <span id="basic-icon-default-phone2" class="input-group-text"><i class="bx bx-task"></i></span>
                         <input class="form-control" type="text" id="Task" name="Task" placeholder="">
@@ -89,17 +101,17 @@
                 </div>
                 <div class="mb-3 col-md-6">
                     @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label col-md-4" })
-                    
-                            <div class="input-group input-group-merge">
-                                <span id="basic-icon-default-phone2" class="input-group-text"><i class="bx bx-phone"></i></span>
-                                <input class="form-control" type="tel" id="PhoneNumber" name="PhoneNumber" placeholder="">
-                            </div>
-                        
-                    
+
+                    <div class="input-group input-group-merge">
+                        <span id="basic-icon-default-phone2" class="input-group-text"><i class="bx bx-phone"></i></span>
+                        <input class="form-control" type="tel" id="PhoneNumber" name="PhoneNumber" placeholder="">
+                    </div>
+
+
                 </div>
                 <div class="mb-3 col-md-6">
                     @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
-                    
+
                     <div class="input-group input-group-merge">
                         <span class="input-group-text"><i class="bx bx-map"></i></span>
                         <input class="form-control" type="text" id="Address" name="Address" placeholder="">
@@ -116,7 +128,7 @@
                 </div>
                 <div class="mb-3 col-md-6">
                     @Html.LabelFor(model => model.MaritalStatus, htmlAttributes: new { @class = "control-label col-md-4" })
-                   
+
                     <div class="input-group input-group-merge">
                         <span class="input-group-text"><i class="bx bx-male"></i></span>
                         <input class="form-control" type="text" id="MaritalStatus" name="MaritalStatus" placeholder="">
@@ -124,7 +136,7 @@
                 </div>
                 <div class="mb-3 col-md-6">
                     @Html.LabelFor(model => model.PositionDetail, htmlAttributes: new { @class = "control-label col-md-2" })
-                   
+
                     <div class="input-group input-group-merge">
                         <span class="input-group-text"><i class="bx bx-detail"></i></span>
                         <input class="form-control" type="text" id="PositionDetail" name="PositionDetail" placeholder="">
@@ -132,7 +144,7 @@
                 </div>
                 <div class="mb-3 col-md-6">
                     @Html.LabelFor(model => model.RelativesFullName, htmlAttributes: new { @class = "control-label col-md-4" })
-                    
+
                     <div class="input-group input-group-merge">
                         <span class="input-group-text"><i class="bx bx-user"></i></span>
                         <input class="form-control" type="text" id="RelativesFullName" name="RelativesFullName" placeholder="">
@@ -140,7 +152,7 @@
                 </div>
                 <div class="mb-3 col-md-6">
                     @Html.LabelFor(model => model.RelativesIdNumber, htmlAttributes: new { @class = "control-label col-md-4" })
-                    
+
                     <div class="input-group input-group-merge">
                         <span class="input-group-text"><i class="bx bx-id-card"></i></span>
                         <input class="form-control" type="number" id="RelativesIdNumber" name="RelativesIdNumber" placeholder="">
@@ -148,7 +160,7 @@
                 </div>
                 <div class="mb-3 col-md-6">
                     @Html.LabelFor(model => model.RelativesPhoneNumber, htmlAttributes: new { @class = "control-label col-md-4" })
-                    
+
                     <div class="input-group input-group-merge">
                         <span class="input-group-text"><i class="bx bx-phone"></i></span>
                         <input class="form-control" type="number" id="RelativesPhoneNumber" name="RelativesPhoneNumber" placeholder="">
@@ -156,13 +168,13 @@
                 </div>
                 <div class="mb-3 col-md-6">
                     @Html.LabelFor(model => model.RelativesInformation, htmlAttributes: new { @class = "control-label col-md-4" })
-                    
+
                     <div class="input-group input-group-merge">
                         <span class="input-group-text"><i class="bx bx-info-circle"></i></span>
                         <input class="form-control" type="text" id="RelativesInformation" name="RelativesInformation" placeholder="">
                     </div>
                 </div>
-               
+
 
             </div>
             <div class="mt-2">

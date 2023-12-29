@@ -1,0 +1,88 @@
+﻿@model JobTracking.Models.JobTracking.StaffProjects
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'></script>
+<script type='text/javascript' src='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js'></script>
+
+<div class="container-xxl">
+    <div class="authentication-wrapper authentication-basic container-p-y">
+        <div class="authentication-inner">
+            <!-- Register Card -->
+            <div class="card">
+                <div class="card-body">
+                    <!-- Logo -->
+
+
+                    <form action="/StaffProjects/Create" method="post">
+                        <div class="form-group">
+                            <label>Project Title</label>
+                            <input class="form-control" name="ProjectTitle" type="text" placeholder="Type Your Project's Title" />
+
+                        </div>
+                        <div class="form-group">
+                            <label>Project Detail</label>
+                            <input class="form-control" name="ProjectDetail" type="text" placeholder="Type Your Project's Detail" />
+
+                        </div>
+
+
+                        <div class="mb-3 col-md-6">
+                            <label>
+                                Project's Priority Status
+                            </label>
+                            <div class="input-group input-group-merge">
+                                <span id="basic-icon-default-company2" class="input-group-text">
+                                    <i class="bx bx-buildings"></i>
+
+                                </span>
+                                <select name="ProjectPriorityStatus" class="form-control" required>
+                                    <option class="text" value="choose">Choose an option</option>
+                                    <option class="text-danger" value="High Priority">High Priority</option>
+                                    <option class="text-primary" value="Mid Priority">Mid Priority</option>
+                                    <option class="text-success" value="Low Priority">Low Priority</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+
+                        <div id="insert-section">
+                            <div class="form-group">
+                                <label>Staff Members</label>
+                                <div id="staff-container">
+                                    <div class="staff-row">
+                                        @Html.DropDownList("StaffId", null, htmlAttributes: new { @class = "form-control staff-dropdown" })
+                                        <i class="bx bx-plus" onclick="AddStaff()"></i>
+                                        <i class="bx bx-minus" onclick="RemoveStaff(this)"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-2">
+                            <button type="submit" class="btn btn-primary me-2">Create Task</button>
+                            <a href="/StaffInfos/Index/" class="btn btn-outline-secondary">Home</a>
+                        </div>
+                        </form>
+
+                        <script>
+                            function AddStaff() {
+                                var $staffContainer = $("#staff-container");
+                                var $newRow = $(".staff-row:first").clone(true);
+
+                                // Temizleme işlemleri
+                                $newRow.find(".bx-plus").remove();
+                                $newRow.find(".bx-minus").show();
+                                $newRow.find("select").val(""); // Eğer yeni seçenek ekledikten sonra seçimi temizlemek istiyorsanız
+
+                                $staffContainer.append($newRow);
+                            }
+
+                            function RemoveStaff(button) {
+                                $(button).closest(".staff-row").remove();
+                            }
+                        </script>

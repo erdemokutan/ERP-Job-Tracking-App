@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using JobTracking.Models.DataContext;
 using JobTracking.Models.Staff;
 
+
 namespace JobTracking.Controllers
 {
     public class StaffInfosController : Controller
@@ -17,6 +18,11 @@ namespace JobTracking.Controllers
 
         // GET: StaffInfos
         public ActionResult Index()
+        {
+            return View(db.StaffInfos.ToList());
+        }
+
+        public ActionResult StaffCard()
         {
             return View(db.StaffInfos.ToList());
         }

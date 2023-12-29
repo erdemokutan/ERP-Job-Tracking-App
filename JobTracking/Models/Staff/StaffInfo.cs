@@ -18,6 +18,7 @@ namespace JobTracking.Models.Staff
 
         [Key]
         public int StaffId { get; set; }
+
         [DisplayName("E-Mail")]
         public string Email { get; set; }
 
@@ -33,6 +34,9 @@ namespace JobTracking.Models.Staff
         [StringLength(50, ErrorMessage = "maximum length cannot be more than 50 characters")]
         public string NameSurname { get; set; }
 
+
+        [DisplayName("Profile Picture")]
+        public string StaffPhoto { get; set; }
 
         [DisplayName("Identity Number")]
         [StringLength(25, ErrorMessage = "maximum length cannot be more than 25 characters")]
