@@ -12,7 +12,7 @@ namespace JobTracking.Controllers
 
     {
 
-        private ProjectTrackingDBContext db = new ProjectTrackingDBContext(); //DB Connection
+        private readonly ProjectTrackingDBContext db = new ProjectTrackingDBContext(); //DB Connection
        
         // GET: StaffProjects
         public ActionResult Index()
@@ -20,7 +20,7 @@ namespace JobTracking.Controllers
             var tasklist = db.StaffProjectss.ToList();
             return View(tasklist);
         }
-
+        
         public ActionResult Create()
         {
             ViewBag.StaffId = new SelectList(db.StaffInfos, "StaffId", "NameSurname");
@@ -38,5 +38,30 @@ namespace JobTracking.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-    }
+        public ActionResult Edit(int id) {
+            var projectObj = db.StaffProjectss.Find(id);
+            return View(projectObj);
+        }
+        [HttpPost]
+
+        public ActionResult Edit(StaffProjects projectObj)
+        {
+            var projectDbObj = db.StaffProjectss.Find(projectObj.StaffProjectId);
+            projectDbObj.ProjectDetail = projectObj.ProjectDetail;
+            projectDbObj.ProjectTitle=projectObj.ProjectTitle;
+            projectDbObj.ProjectProgressStatus = projectObj.ProjectProgressStatus;
+            projectDbObj.ProjectPriorityStatus= projectObj.ProjectPriorityStatus;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Complete(int id)
+        {
+            var projectObj=db.StaffProjectss.Find(id);
+            projectObj.ProjectCompletionStatus = true;
+            projectObj.ProjectProgressStatus = 100;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
 }
+    }

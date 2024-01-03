@@ -14,7 +14,7 @@ namespace JobTracking.Controllers
 {
     public class StaffInfosController : Controller
     {
-        private ProjectTrackingDBContext db = new ProjectTrackingDBContext(); //DB Connection
+        private readonly ProjectTrackingDBContext db = new ProjectTrackingDBContext(); //DB Connection
 
         // GET: StaffInfos
         public ActionResult Index()

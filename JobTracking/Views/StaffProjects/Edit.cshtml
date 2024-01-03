@@ -1,7 +1,7 @@
 ﻿@model JobTracking.Models.JobTracking.StaffProjects
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
@@ -15,21 +15,25 @@
             <div class="card">
                 <div class="card-body">
                     <!-- Logo -->
-                    <form action="/StaffProjects/Create" method="post">
-
+                    <form action="/StaffProjects/Edit" method="post">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <span>Task ID</span>
+                                <input name="StaffProjectId" class="form-control" value="@Model.StaffProjectId" readonly />
+                            </div>
+                        </div>
                         <div class="row">
                             <!-- Sol tarafta yer alan elemanlar -->
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="ProjectTitle" class="form-label">Project Title</label>
-                                    <input class="form-control" name="ProjectTitle" type="text" placeholder="" />
+                                    <input class="form-control" name="ProjectTitle" type="text" placeholder="" value="@Model.ProjectTitle" />
                                 </div>
                                 <div class="mb-3">
                                     <label for="ProjectDetail" class="form-label">Project Detail</label>
-                                    <input class="form-control" name="ProjectDetail" type="text" placeholder="" />
+                                    <input class="form-control" name="ProjectDetail" type="text" placeholder="" value="@Model.ProjectDetail" />
                                 </div>
                             </div>
-
                             <!-- Sağ tarafta yer alan elemanlar -->
                             <div class="col-md-6">
                                 <div class="mb-3">
@@ -45,45 +49,41 @@
                                     </div>
                                 </div>
 
-                                <div class="mb-3">
-                                    <label for="StaffMembers" class="form-label">Staff Members</label>
-                                    <div id="staff-container">
-                                        <div class="staff-row">
-                                            @Html.DropDownList("StaffId", null, htmlAttributes: new { @class = "form-control staff-dropdown" })
-                                            <i class="bx bx-plus" onclick="AddStaff()"></i>
-                                            <i class="bx bx-minus" onclick="RemoveStaff(this)"></i>
-                                        </div>
-                                    </div>
+
+                            </div>
+                            <div class="form-group">
+                                <input oninput="EditProgress(this)" name="ProjectProgressStatus" id="range-input" value="@Model.ProjectProgressStatus" style="width:100%; color:mediumslateblue;" type="range" min="0" max="100" />
+                            </div>
+                            <div class="col-md-12">
+                                <span>% </span>
+                                <span id="range-display" style="color:black; font-size:15px">@Model.ProjectProgressStatus</span>
+                            </div>
+
+
+                        </div>
+
+                            <div class="mb-3 col-md-12">
+                                <div class="mt-2">
+                                    <button type="submit" class="btn btn-primary me-2">Create Task</button>
+                                    <a href="/StaffInfos/Index/" class="btn btn-outline-secondary">Home</a>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="mb-3 col-md-12">
-                            <div class="mt-2">
-                                <button type="submit" class="btn btn-primary me-2">Create Task</button>
-                                <a href="/StaffInfos/Index/" class="btn btn-outline-secondary">Home</a>
-                            </div>
-                        </div>
-
-                    </form>
+</form>
                 </div>
             </div>
         </div>
     </div>
-</div>       <script>
-                    function AddStaff() {
-                        var $staffContainer = $("#staff-container");
-                        var $newRow = $(".staff-row:first").clone(true);
+</div>
+<script>
+    function EditProgress(input) {
+        // Input değeri alınır
+        var progressValue = input.value;
 
-                        // Temizleme işlemleri
-                        $newRow.find(".bx-plus").remove();
-                        $newRow.find(".bx-minus").show();
-                        $newRow.find("select").val(""); // Eğer yeni seçenek ekledikten sonra seçimi temizlemek istiyorsanız
+        // Span elementi bulunur
+        var spanElement = document.getElementById("range-display");
 
-                        $staffContainer.append($newRow);
-                    }
-
-                    function RemoveStaff(button) {
-                        $(button).closest(".staff-row").remove();
-                    }
-                </script>
+        // Span elementinin içeriği güncellenir
+        spanElement.textContent = progressValue;
+    }
+</script>

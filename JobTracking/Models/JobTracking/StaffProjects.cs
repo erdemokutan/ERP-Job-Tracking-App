@@ -35,8 +35,8 @@ namespace JobTracking.Models.JobTracking
         public string ProjectPriorityStatus { get; set; }
 
         [DisplayName("Project Progress Status")]
-        [StringLength(4, ErrorMessage = "maximum length cannot be more than 4 characters")]
-        public string ProjectProgressStatus { get; set; }
+        //[StringLength(4, ErrorMessage = "maximum length cannot be more than 4 characters")]
+        public int ProjectProgressStatus { get; set; }
 
         public DateTime? ProjectCompletionDate { get; set; }
 
