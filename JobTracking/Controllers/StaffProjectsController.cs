@@ -62,6 +62,7 @@ namespace JobTracking.Controllers
             projectObj.ProjectProgressStatus = 100;
             db.SaveChanges();
             return RedirectToAction("Index");
+            
         }
 }
     }

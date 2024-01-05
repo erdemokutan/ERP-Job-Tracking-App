@@ -128,6 +128,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OverviewController.cs" />
     <Compile Include="Controllers\StaffInfosController.cs" />
     <Compile Include="Controllers\StaffProjectsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -462,6 +463,7 @@
     <Content Include="Views\StaffProjects\Index.cshtml" />
     <Content Include="Views\StaffProjects\Create.cshtml" />
     <Content Include="Views\StaffProjects\Edit.cshtml" />
+    <Content Include="Views\Overview\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

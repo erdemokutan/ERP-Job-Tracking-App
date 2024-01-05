@@ -16,24 +16,25 @@
                 <div class="card-body">
                     <!-- Logo -->
                     <form action="/StaffProjects/Edit" method="post">
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <span>Task ID</span>
-                                <input name="StaffProjectId" class="form-control" value="@Model.StaffProjectId" readonly />
-                            </div>
-                        </div>
                         <div class="row">
                             <!-- Sol tarafta yer alan elemanlar -->
                             <div class="col-md-6">
                                 <div class="mb-3">
+                                    <span>Task ID</span>
+                                    <input name="StaffProjectId" class="form-control" value="@Model.StaffProjectId" readonly />
+                                </div>
+
+                                <div class="mb-3">
                                     <label for="ProjectTitle" class="form-label">Project Title</label>
                                     <input class="form-control" name="ProjectTitle" type="text" placeholder="" value="@Model.ProjectTitle" />
                                 </div>
+
                                 <div class="mb-3">
                                     <label for="ProjectDetail" class="form-label">Project Detail</label>
                                     <input class="form-control" name="ProjectDetail" type="text" placeholder="" value="@Model.ProjectDetail" />
                                 </div>
                             </div>
+
                             <!-- Sağ tarafta yer alan elemanlar -->
                             <div class="col-md-6">
                                 <div class="mb-3">
@@ -49,41 +50,48 @@
                                     </div>
                                 </div>
 
-
-                            </div>
-                            <div class="form-group">
-                                <input oninput="EditProgress(this)" name="ProjectProgressStatus" id="range-input" value="@Model.ProjectProgressStatus" style="width:100%; color:mediumslateblue;" type="range" min="0" max="100" />
-                            </div>
-                            <div class="col-md-12">
-                                <span>% </span>
-                                <span id="range-display" style="color:black; font-size:15px">@Model.ProjectProgressStatus</span>
-                            </div>
-
-
-                        </div>
-
-                            <div class="mb-3 col-md-12">
-                                <div class="mt-2">
-                                    <button type="submit" class="btn btn-primary me-2">Create Task</button>
-                                    <a href="/StaffInfos/Index/" class="btn btn-outline-secondary">Home</a>
+                                <div class="mb-4">
+                                    <label for="range-input" class="form-label">Progress</label>
+                                    <div class="input-group">
+                                        <input oninput="EditProgress(this)" name="ProjectProgressStatus" id="range-input" value="@Model.ProjectProgressStatus" style="width:100%; color:mediumslateblue;" type="range" min="0" max="100" class="form-range" />
+                                        <div class="col-md-12 mt-2">
+                                            <span>% </span>
+                                            <span id="range-display" style="color:black; font-size:15px">@Model.ProjectProgressStatus</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
 
-</form>
+                        <div class="mb-3 col-md-12">
+                            <div class="mt-2">
+                                <button type="submit" class="btn btn-primary me-2">Edit Task</button>
+                                <a href="/StaffInfos/Index/" class="btn btn-outline-secondary">Home</a>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
 <script>
     function EditProgress(input) {
         // Input değeri alınır
         var progressValue = input.value;
-
+        var rangeInput = document.getElementById('range-input');
         // Span elementi bulunur
         var spanElement = document.getElementById("range-display");
 
         // Span elementinin içeriği güncellenir
         spanElement.textContent = progressValue;
+        rangeInput.addEventListener('input', function () {
+            var value = this.value;
+            var color = 'linear-gradient(90deg, mediumslateblue 0%, mediumslateblue ' + value + '%, #f8f9fa ' + value + '%, #f8f9fa 100%)';
+            this.style.background = color;
+            rangeDisplay.innerText = value;
+        });
     }
 </script>
